@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Tiago Santos - Analista de Sistemas & Desenvolvedor</title>
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+     <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+ <!-- Loader -->
+     <div class="loader-wrapper" id="loader">
+          <div class="loader"></div>
+     </div>
+
+     <!-- Theme Toggle -->
+     <div class="theme-toggle">
+          <button class="theme-btn" onclick="toggleTheme()">
+               <i class="fas fa-moon"></i>
+               <span>Tema</span>
+          </button>
+     </div>
+
+     <!-- Quick Actions -->
+     <div class="quick-actions">
+          <button class="action-btn" onclick="printResume()">
+               <i class="fas fa-print"></i>
+               <span class="tooltip">Imprimir</span>
+          </button>
+          <button class="action-btn" onclick="downloadPDF()">
+               <i class="fas fa-download"></i>
+               <span class="tooltip">Download PDF</span>
+          </button>
+          <button class="action-btn" onclick="shareResume()">
+               <i class="fas fa-share-alt"></i>
+               <span class="tooltip">Compartilhar</span>
+          </button>
+          <button class="action-btn" onclick="scrollToTop()">
+               <i class="fas fa-arrow-up"></i>
+               <span class="tooltip">Topo</span>
+          </button>
+     </div>
+
+     <div class="container">
+          <!-- Navigation -->
+          <div class="nav-wrapper">
+               <div class="tabs">
+                    <button class="tab active" onclick="showTab('curriculum', this)">
+                         <i class="fas fa-user-tie"></i> Currículo
+                    </button>
+                    <button class="tab" onclick="showTab('portfolio', this)">
+                         <i class="fas fa-briefcase"></i> Portfólio
+                    </button>
+                    <button class="tab" onclick="showTab('skills-detail', this)">
+                         <i class="fas fa-chart-line"></i> Habilidades
+                    </button>
+                    <button class="tab" onclick="showTab('cover-letter', this)">
+                         <i class="fas fa-envelope"></i> Carta
+                    </button>
+               </div>
+          </div>
+
+          <!-- Curriculum Tab -->
+          <div id="curriculum" class="tab-content active">
+               <header class="header">
+                    <div class="header-content">
+                         <div class="profile-section">
+                              <div class="profile-pic">
+                                   <i class="fas fa-user"></i>
+                              </div>
+                              <div>
+                                   <h1 class="name">Tiago Henrique F. Dos Santos</h1>
+                                   <p class="title">Analista de Sistemas & Desenvolvedor</p>
+                              </div>
+                         </div>
+                         <div class="contact-info">
+                              <div class="contact-item">
+                                   <i class="fas fa-map-marker-alt"></i>
+                                   <span>Belém - PA</span>
+                              </div>
+                              <!-- <div class="contact-item">
+                                   <i class="fas fa-phone"></i>
+                                   <span>(91) 98107-1294</span>
+                              </div> -->
+                              <div class="contact-item">
+                                   <i class="fas fa-envelope"></i>
+                                   <span>z.tiagohenrique@gmail.com</span>
+                              </div>
+                              <div class="contact-item">
+                                   <i class="fab fa-linkedin"></i>
+                                   <span>tiagosantosdev</span>
+                              </div>
+                         </div>
+                         <div class="code-pattern">
+                              SELECT * FROM experience<br>
+                              WHERE skills LIKE '%SQL%'<br>
+                              AND years >= 4;<br>
+                              <br>
+                              public class SystemAnalyst {<br>
+                              &nbsp;&nbsp;private string expertise;<br>
+                              &nbsp;&nbsp;public void OptimizeDB() {...}<br>
+                              }
+                         </div>
+                         <div class="logos-container">
+                              <div class="logo-item csharp-logo">C#</div>
+                              <div class="logo-item js-logo">JS</div>
+                         </div>
+                    </div>
+               </header>
+
+               <main class="main-content">
+                    <section class="section" style="--delay: 0.2s">
+                         <h2 class="section-title">
+                              <i class="fas fa-user-circle"></i>
+                              Resumo Profissional
+                         </h2>
+                         <p style="text-align: justify; line-height: 1.8; font-size: 15px;">
+                              Analista de Sistemas com <strong>4 anos de experiência</strong> em TI, especializado em suporte a sistemas ERP,
+                              administração de banco de dados e desenvolvimento de soluções. Expertise em <strong>TOTVS RM, SQL Server e C# .NET</strong>,
+                              com histórico comprovado de otimização de processos empresariais. Experiência sólida em desenvolvimento de relatórios
+                              gerenciais, automação de processos e integração de sistemas.
+                         </p>
+                    </section>
+
+                    <section class="section" style="--delay: 0.4s">
+                         <h2 class="section-title">
+                              <i class="fas fa-briefcase"></i>
+                              Experiência Profissional
+                         </h2>
+                         <div class="timeline">
+                              <div class="timeline-item expandable" style="--item-index: 0">
+                                   <div class="job-header">
+                                        <div>
+                                             <div class="job-title">Analista de Suporte Sistemas e Aplicações</div>
+                                             <div class="company">
+                                                  <i class="fas fa-building"></i>
+                                                  RGN - Revemar Gestão de Negócios LTDA
+                                             </div>
+                                        </div>
+                                        <div class="period">03/2023 - Atual</div>
+                                   </div>
+                                   
+                                   <!-- Resumo visível -->
+                                   <div class="job-summary">
+                                        <p style="color: var(--text-secondary); margin: 15px 0;">
+                                             Suporte Técnico especializado em TOTVS RM com foco nos módulos de RH, desenvolvendo integrações 
+                                             com sistemas externos (SGG e TOTVS RH Admissão Digital) via REST API, otimizando bancos de dados 
+                                             SQL Server e criando dashboards gerenciais para apoio à tomada de decisão.
+                                        </p>
+                                        <div class="skills-preview" style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 15px;">
+                                             <span style="font-size: 12px; padding: 4px 10px; background: #e8f4f8; color: var(--primary); border-radius: 15px;">TOTVS RM</span>
+                                             <span style="font-size: 12px; padding: 4px 10px; background: #e8f4f8; color: var(--primary); border-radius: 15px;">Automação de Ponto</span>
+                                             <span style="font-size: 12px; padding: 4px 10px; background: #e8f4f8; color: var(--primary); border-radius: 15px;">Folha de Pagamento</span>
+                                             <span style="font-size: 12px; padding: 4px 10px; background: #e8f4f8; color: var(--primary); border-radius: 15px;">Gestão de Pessoas</span>
+                                             <span style="font-size: 12px; padding: 4px 10px; background: #e8f4f8; color: var(--primary); border-radius: 15px;">Segurança e Saúde Ocupacional</span>
+                                             <span style="font-size: 12px; padding: 4px 10px; background: #e8f4f8; color: var(--primary); border-radius: 15px;">Microsoft SQL Server</span>
+                                             <span style="font-size: 12px; padding: 4px 10px; background: #e8f4f8; color: var(--primary); border-radius: 15px;">T-SQL</span>
+                                             <span style="font-size: 12px; padding: 4px 10px; background: #e8f4f8; color: var(--primary); border-radius: 15px;">APIs REST</span>
+                                        </div>
+                                   </div>
+                                   
+                                   <!-- Botão expandir -->
+                                   <button class="expand-btn" onclick="toggleExpand(this)" aria-label="Expandir detalhes">
+                                        <span class="expand-text">Principais Atividades</span>
+                                        <i class="fas fa-chevron-down"></i>
+                                   </button>
+                                   
+                                   <!-- Conteúdo expandível -->
+                                   <div class="expandable-content">
+                                        <ul style="margin-left: 20px; color: var(--text-secondary); line-height: 1.7; margin-top: 20px;">
+                                             <li style="margin-bottom: 10px;"><strong style="color: var(--primary);">Suporte Especializado TOTVS RM:</strong> Gestão, parametrização e Suporte técnico especializado nos módulos TOTVS RM (Folha de Pagamento, Automação de Ponto, Gestão de Pessoas e Segurança e Saúde Ocupacional), incluindo configuração de rotinas, administração de acessos, atualizações, monitoramento de processos, apoio às áreas de negócio e integração com banco de dados (SQL Server).</li>
+                                             <li style="margin-bottom: 10px;"><strong style="color: var(--primary);">Desenvolvimento de Relatórios Gerenciais:</strong> Criação de relatórios complexos utilizando RM Reports, Planilha Net e Cubos OLAP, implementando consultas SQL otimizadas e desenvolvendo planilhas especializadas como Planilha Turnover para controle da Gestão de Pessoas, otimizando o acompanhamento de indicadores estratégicos de RH.</li>
+                                             <li style="margin-bottom: 10px;"><strong style="color: var(--primary);">Administração Avançada de Banco de Dados:</strong> Análise, monitoramento e otimização contínua no Microsoft SQL Server e Oracle, com experiência em criação de procedures, triggers, views e funções para apoiar a gestão e fornecer maior confiabilidade nos dados. Atuação em modelagem de dados, consultas avançadas (CTEs, subqueries, PIVOT), otimização de performance com índices e variáveis, além do desenvolvimento de relatórios estratégicos para suporte à gestão e diretoria.</li>
+                                             <li style="margin-bottom: 10px;"><strong style="color: var(--primary);">Integração de Sistemas Externos:</strong> Integrações entre TOTVS RM e plataformas externas (SGG, TOTVS RH Admissão Digital), criação de layouts bancários com geração de arquivos TXT e implementação de consultas SQL parametrizadas para APIs seguras, estabelecimento de padrões consistentes para endpoints das APIs da TOTVS, seguindo boas práticas REST/HTTP, automatizando processos e garantindo maior acessibilidade das informações para gestão.</li>
+                                             <li style="margin-bottom: 10px;"><strong style="color: var(--primary);">Atendimento Técnico Especializado:</strong> Resolução eficiente de chamados técnicos via sistema Milvus, realizando análise de causa raiz e implementação de soluções definitivas para garantir estabilidade operacional e continuidade dos serviços.</li>
+                                             <li style="margin-bottom: 10px;"><strong style="color: var(--primary);">Implementação de Melhorias Contínuas:</strong> Implementação e monitoramento de melhorias em módulos sistêmicos, promovendo otimização de processos, automação de rotinas operacionais e aprimoramento da experiência do usuário final.</li>
+                                        </ul>
+                                   </div>
+                              </div>
+
+                              <div class="timeline-item expandable" style="--item-index: 1">
+                                   <div class="job-header">
+                                        <div>
+                                             <div class="job-title">Estagiário - Suporte de Sistemas e Aplicações</div>
+                                             <div class="company">
+                                                  <i class="fas fa-building"></i>
+                                                  RGN - Revemar Gestão de Negócios LTDA
+                                             </div>
+                                        </div>
+                                        <div class="period">08/2021 - 01/2023</div>
+                                   </div>
+                                   
+                                   <!-- Resumo visível -->
+                                   <div class="job-summary">
+                                        <p style="color: var(--text-secondary); margin: 15px 0;">
+                                             Atuação na administração do ERP NBS para concessionárias de veículos e autopeças, com foco em gestão fiscal, 
+                                             financeira e operacional. Experiência no desenvolvimento de soluções em Oracle PL/SQL, Delphi XE2 e Java, 
+                                             garantindo performance, confiabilidade e integração eficiente com o banco de dados. Vivência em automação RPA e otimização de processos, contribuindo para maior eficiência, segurança e agilidade no gerenciamento dos negócios
+                                        </p>
+                                        <div class="skills-preview" style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 15px;">
+                                             <span style="font-size: 12px; padding: 4px 10px; background: #e8f4f8; color: var(--primary); border-radius: 15px;">Oracle PL/SQL</span>
+                                             <span style="font-size: 12px; padding: 4px 10px; background: #e8f4f8; color: var(--primary); border-radius: 15px;">ERP NBS</span>
+                                             <span style="font-size: 12px; padding: 4px 10px; background: #e8f4f8; color: var(--primary); border-radius: 15px;">RPA</span>
+                                             <span style="font-size: 12px; padding: 4px 10px; background: #e8f4f8; color: var(--primary); border-radius: 15px;">Automation Edge</span>
+                                        </div>
+                                   </div>
+                                   
+                                   <!-- Botão expandir -->
+                                   <button class="expand-btn" onclick="toggleExpand(this)" aria-label="Expandir detalhes">
+                                        <span class="expand-text">Principais Atividades</span>
+                                        <i class="fas fa-chevron-down"></i>
+                                   </button>
+                                   
+                                   <!-- Conteúdo expandível -->
+                                   <div class="expandable-content">
+                                        <ul style="margin-left: 20px; color: var(--text-secondary); line-height: 1.7; margin-top: 20px;">
+                                             <li style="margin-bottom: 10px;"><strong style="color: var(--primary);">Administração ERP NBS e Desenvolvimento PL/SQL:</strong> Administração completa do sistema ERP NBS especializado em concessionárias de veículos, gerenciando módulos de vendas, estoque, peças, serviços e processos contábeis para múltiplas empresas. Desenvolvimento e manutenção de procedures, triggers e consultas complexas em Oracle PL/SQL para automação de processos fiscais, cálculo de comissões e integração de dados entre módulos.</li>
+                                             <li style="margin-bottom: 10px;"><strong style="color: var(--primary);">Automação RPA e Otimização de Performance:</strong> Implementação de automação RPA utilizando Automation Edge para integração de sistemas, validação de dados e execução de rotinas condicionais, otimizando processos manuais e aumentando eficiência operacional. Análise e otimização de consultas Oracle com performance comprometida, implementando melhorias que resultaram em significativa redução do tempo de resposta de relatórios.</li>
+                                             <li style="margin-bottom: 10px;"><strong style="color: var(--primary);">Suporte Técnico e Monitoramento de Processos:</strong> Atendimento remoto aos usuários via sistema de chamados OTRS, prestando suporte técnico especializado com foco na resolução ágil de incidentes e treinamento de usuários finais. Monitoramento diário dos processos de vendas e pós-vendas, garantindo integridade dos dados e identificação proativa de inconsistências no sistema.</li>
+                                             <li style="margin-bottom: 10px;"><strong style="color: var(--primary);">Gestão Fiscal e Desenvolvimento de Relatórios:</strong> Gestão completa de processos fiscais e financeiros, incluindo configuração de cálculos automatizados de comissões de vendas, controle de emissão de notas fiscais e gestão do fluxo de entrada de mercadorias e veículos. Desenvolvimento de relatórios customizados para análises de vendas, controle de estoque e indicadores financeiros específicos para gestão de concessionárias.</li>
+                                        </ul>
+                                   </div>
+                              </div>
+                         </div>
+
+                         <div style="background: linear-gradient(135deg, #FFF9E6 0%, #FFEDCC 100%); border-left: 4px solid var(--accent); padding: 20px; margin: 30px 0; border-radius: 0 12px 12px 0; animation: fadeInUp 0.8s forwards; animation-delay: 0.6s;">
+                              <div style="font-weight: 700; color: #B8860B; margin-bottom: 10px; font-size: 18px;">
+                                   <i class="fas fa-trophy"></i> Principais Conquistas:
+                              </div>
+                              <ul style="list-style: none; padding: 0; color: var(--text-secondary);">
+                                   <li style="margin-bottom: 8px;">
+                                        <i class="fas fa-check-circle" style="color: #4CAF50; margin-right: 8px;"></i>
+                                        Implementação de integrações estratégicas entre sistemas ERP e plataformas externas, otimizando fluxos de dados corporativos.
+                                   </li>
+                                   <li style="margin-bottom: 8px;">
+                                        <i class="fas fa-check-circle" style="color: #4CAF50; margin-right: 8px;"></i>
+                                        Desenvolvimento de automações que eliminaram gargalos operacionais e aumentaram eficiência de processos críticos.
+                                   </li>
+                                   <li>
+                                        <i class="fas fa-check-circle" style="color: #4CAF50; margin-right: 8px;"></i>
+                                        Otimização de performance de consultas e relatórios, melhorando significativamente a agilidade para tomada de decisões gerenciais.
+                                   </li>
+                              </ul>
+                         </div>
+                    </section>
+
+                    <section class="section" style="--delay: 0.6s">
+                         <h2 class="section-title">
+                              <i class="fas fa-graduation-cap"></i>
+                              Formação Acadêmica
+                         </h2>
+                         <div class="timeline">
+                              <div class="timeline-item" style="--item-index: 0">
+                                   <div class="job-header">
+                                        <div>
+                                             <div class="job-title">Pós-graduação em Ciência de Dados e Big Data Analytics</div>
+                                             <div class="company">
+                                                  <i class="fas fa-university"></i>
+                                                  Faculdade Estácio do Pará - FAP
+                                             </div>
+                                        </div>
+                                        <div class="period">2024 - Atual</div>
+                                   </div>
+                              </div>
+
+                              <div class="timeline-item" style="--item-index: 1">
+                                   <div class="job-header">
+                                        <div>
+                                             <div class="job-title">Análise e Desenvolvimento de Sistemas</div>
+                                             <div class="company">
+                                                  <i class="fas fa-university"></i>
+                                                  Faculdade Estácio do Pará - FAP
+                                             </div>
+                                        </div>
+                                        <div class="period">Concluído 2023</div>
+                                   </div>
+                              </div>
+                         </div>
+                    </section>
+
+                    <section class="section" style="--delay: 0.8s">
+                         <h2 class="section-title">
+                              <i class="fas fa-award"></i>
+                              Certificações
+                         </h2>
+                         <div class="cert-grid">
+                              <div class="cert-card" onclick="openCertModal('totvs')">
+                                   <div class="cert-title">TOTVS Backoffice - Ferramentas Gerenciais</div>
+                                   <div class="cert-institution">TOTVS - Universidade TOTVS</div>
+                                   <div class="cert-period">16 horas - 2025</div>
+                              </div>
+                              <div class="cert-card" onclick="openCertModal('sqladvanced')">
+                                   <div class="cert-title">Advanced SQL Server Masterclass</div>
+                                   <div class="cert-institution">Udemy</div>
+                                   <div class="cert-period">2024</div>
+                              </div>
+                              <div class="cert-card" onclick="openCertModal('sqladmin')">
+                                   <div class="cert-title">SQL Server 2019: Do SQL à Administração</div>
+                                   <div class="cert-institution">Udemy</div>
+                                   <div class="cert-period">2024</div>
+                              </div>
+                              <div class="cert-card" onclick="openCertModal('csharp')">
+                                   <div class="cert-title">C# Programação Orientada a Objetos</div>
+                                   <div class="cert-institution">Udemy</div>
+                                   <div class="cert-period">Em andamento</div>
+                              </div>
+                         </div>
+                    </section>
+                      <!-- Modals de Certificações -->
+                    <div id="certModal" class="modal">
+                         <div class="modal-overlay" onclick="closeCertModal()"></div>
+                         <div class="modal-content">
+                              <button class="modal-close" onclick="closeCertModal()">
+                                   <i class="fas fa-times"></i>
+                              </button>
+                              <div class="modal-header">
+                                   <i class="fas fa-certificate modal-icon"></i>
+                                   <h3 id="modalTitle" class="modal-title"></h3>
+                              </div>
+                              <div class="modal-body" id="modalBody">
+                                   <!-- Conteúdo será inserido dinamicamente -->
+                              </div>
+                              <div class="modal-footer">
+                                   <div id="modalInstitution" class="modal-institution"></div>
+                                   <div id="modalPeriod" class="modal-period"></div>
+                              </div>
+                         </div>
+                    </div>
+               </main>
+          </div>
+
+          <!-- Portfolio Tab -->
+          <div id="portfolio" class="tab-content">
+               <header class="header">
+                    <div class="header-content">
+                         <div>
+                              <h1 class="name">Portfólio de Projetos</h1>
+                              <p class="title">Principais realizações e projetos desenvolvidos</p>
+                         </div>
+                    </div>
+               </header>
+
+               <main class="main-content">
+                    <section class="section">
+                         <h2 class="section-title">
+                              <i class="fas fa-project-diagram"></i>
+                              Projetos Destacados
+                         </h2>
+
+                         <div class="timeline">
+                              <div class="timeline-item" style="--item-index: 0">
+                                   <div class="job-header">
+                                        <div>
+                                             <div class="job-title">Sistema de Consulta de Funcionários</div>
+                                             <div class="company">
+                                                  <i class="fas fa-code"></i>
+                                                  Desenvolvimento Web
+                                             </div>
+                                        </div>
+                                        <div class="period">2025</div>
+                                   </div>
+                                   <p style="margin-top: 10px; color: var(--text-secondary);">
+                                        Desenvolvi um sistema web responsivo completo para consulta integrada de dados corporativos de funcionários, 
+                                        implementando interface moderna com filtros avançados e validação em tempo real. O projeto envolveu integração 
+                                        direta com <strong>SQL Server</strong> através de API REST autenticada, utilizando consultas parametrizadas para 
+                                        garantir segurança e performance. <br>
+                                        A solução consta com sistema de busca multi-critério (CPF, nome, função, cidade, segmento), interface adaptativa 
+                                        para desktop/tablet/mobile com design responsivo, e tratamento robusto de estados de loading e erros. 
+                                        Implementei técnicas de otimização como validações, máscaras automáticas para CPF e painéis 
+                                        expansíveis para visualização detalhada de dados, resultando em uma ferramenta intuitiva que reduziu 
+                                        significativamente o tempo de consultas corporativas. <br>
+                                        <strong>Sistema criado especificamente para as equipes de Suporte N1 e N2</strong>, eliminando processos manuais 
+                                        de busca de dados de colaboradores e aumentando significativamente a agilidade e eficiência no atendimento 
+                                        de suporte técnico interno.
+                                   </p>
+                                   <div style="margin: 15px 0; padding: 15px; background: #f8f9fa; border-left: 4px solid #3498db; border-radius: 4px;">
+                                        <strong style="color: #2c3e50;">Exemplo de Implementação:</strong>
+                                        <pre style="margin: 8px 0; padding: 10px; background: #2c3e50; color: #ecf0f1; border-radius: 4px; font-size: 0.85rem; overflow-x: auto;"><code>// Estrutura da consulta SQL via API
+                                             const params = {
+                                             CPF: cpf,
+                                             NOME: nome,
+                                             FUNCAO: funcao,
+                                             CODEMPRESA: codempresa,
+                                             SEGUIMENTO: seguimento,
+                                             CIDADE: cidade
+                                             };
+
+                                             const url = `${baseURL}/consultaSQLServer/RealizaConsulta/CONSULTA.FUNC.TT/0/P/?parameters=${parametersString}`;</code></pre>
+                                   </div>
+                                   <div class="skill-tags" style="margin-top: 15px;">
+                                        <span class="skill-tag">HTML 5</span>
+                                        <span class="skill-tag">CSS3 Grid/Flexbox</span>
+                                        <span class="skill-tag">JavaScript ES6+</span>
+                                        <span class="skill-tag">API REST</span>
+                                        <span class="skill-tag">SQL Server</span>
+                                        <span class="skill-tag">Responsive Design</span>
+                                        <span class="skill-tag">Performance Optimization</span>
+                                   </div>
+                              </div>
+                              <div class="timeline-item" style="--item-index: 0">
+                                   <div class="job-header">
+                                        <div>
+                                             <div class="job-title">Sistema de Integração TOTVS RM - APIs REST</div>
+                                             <div class="company">
+                                                  <i class="fas fa-code"></i>
+                                                  Desenvolvimento de Integração
+                                             </div>
+                                        </div>
+                                        <div class="period">2024-2025</div>
+                                   </div>
+                                   <p style="margin-top: 10px; color: var(--text-secondary);">
+                                        Liderei o desenvolvimento e implementação de sistemas abrangentes de integração entre TOTVS RM e plataformas externas, 
+                                        incluindo SGG e TOTVS RH Admissão Digital. O projeto envolveu implementação de consultas SQL parametrizadas para APIs seguras 
+                                        e estabelecimento de padrões consistentes para endpoints seguindo boas práticas REST/HTTP para o sistema SGG. <br>
+                                        Na plataforma <strong>TOTVS RH Admissão Digital</strong>, assumi a liderança completa da estrutura técnica, sendo responsável pela parametrização 
+                                        de fluxos de trabalho complexos, desenvolvimento de relatórios customizados dentro da plataforma e monitoramento contínuo dos processos 
+                                        de admissão. Além das atividades técnicas, conduzi treinamentos especializados para a equipe do Departamento Pessoal, capacitando os 
+                                        usuários finais na utilização eficiente da ferramenta.
+                                   </p>
+                                   <div class="skill-tags" style="margin-top: 15px;">
+                                        <span class="skill-tag">TOTVS RM</span>
+                                        <span class="skill-tag">REST API</span>
+                                        <span class="skill-tag">Integração de Sistemas</span>
+                                        <span class="skill-tag">Treinamento de Equipes</span>
+                                        <span class="skill-tag">Gestão de Projetos</span>
+                                        <span class="skill-tag">SQL Server</span>
+                                   </div>
+                              </div>
+
+                              <div class="timeline-item" style="--item-index: 1">
+                                   <div class="job-header">
+                                        <div>
+                                             <div class="job-title">Dashboard Gerencial</div>
+                                             <div class="company">
+                                                  <i class="fas fa-chart-pie"></i>
+                                                  Business Intelligence
+                                             </div>
+                                        </div>
+                                        <div class="period">2023-2025</div>
+                                   </div>
+                                   <p style="margin-top: 10px; color: var(--text-secondary);">
+                                        Desenvolvimento de dashboards interativos utilizando Planilha NET e RM Reports do TOTVS para análise multidimensional de dados de RH. 
+                                        Implementei KPIs estratégicos incluindo indicadores de turnover, absenteísmo e produtividade, proporcionando visibilidade gerencial 
+                                        em tempo real e otimizando a tomada de decisões estratégicas da área de recursos humanos.
+                                   </p>
+                                   <div class="skill-tags" style="margin-top: 15px;">
+                                        <span class="skill-tag">Planilha NET</span>
+                                        <span class="skill-tag">RM Reports</span>
+                                        <span class="skill-tag">Cubos</span>
+                                        <span class="skill-tag">T-SQL</span>
+                                   </div>
+                              </div>
+
+                              <div class="timeline-item" style="--item-index: 2">
+                                   <div class="job-header">
+                                        <div>
+                                             <div class="job-title">Automação RPA - Processos Fiscais</div>
+                                             <div class="company">
+                                                  <i class="fas fa-robot"></i>
+                                                  Robotic Process Automation
+                                             </div>
+                                        </div>
+                                        <div class="period">2021-2022</div>
+                                   </div>
+                                   <p style="margin-top: 10px; color: var(--text-secondary);">
+                                        Implementação de automação RPA com Automation Edge para integração de sistemas fiscais,
+                                        validação automática de dados e execução de rotinas condicionais.
+                                   </p>
+                                   <div class="skill-tags" style="margin-top: 15px;">
+                                        <span class="skill-tag">RPA</span>
+                                        <span class="skill-tag">Automation Edge</span>
+                                        <span class="skill-tag">Oracle</span>
+                                   </div>
+                              </div>
+                         </div>
+                    </section>
+
+                    <section class="section">
+                         <h2 class="section-title">
+                              <i class="fas fa-trophy"></i>
+                              Principais Conquistas
+                         </h2>
+                         <div class="skills-container">
+                              <div class="skill-card" style="--card-index: 0">
+                                   <div class="skill-category-title">
+                                        <i class="fas fa-clock"></i>
+                                        Otimização de Performance
+                                   </div>
+                                   <p style="color: var(--text-secondary);">
+                                        Análise e otimização de consultas complexas em Oracle e SQL Server, implementando melhorias em estruturas de banco, 
+                                        procedures e estratégias de indexação, resultando em maior eficiência operacional e agilidade na disponibilização 
+                                        de informações gerenciais estratégicas.
+                                   </p>
+                              </div>
+
+                              <div class="skill-card" style="--card-index: 1">
+                                   <div class="skill-category-title">
+                                        <i class="fas fa-sync"></i>
+                                        Automação de Processos
+                                   </div>
+                                   <p style="color: var(--text-secondary);">
+                                        Análise e automação de processos manuais repetitivos através de scripts, procedures e integrações sistêmicas, 
+                                        eliminando gargalos operacionais e estabelecendo fluxos de trabalho otimizados que proporcionaram maior 
+                                        agilidade e confiabilidade nos processos empresariais.
+                                   </p>
+                              </div>
+
+                              <div class="skill-card" style="--card-index: 2">
+                                   <div class="skill-category-title">
+                                        <i class="fas fa-link"></i>
+                                        Integrações Estratégicas
+                                   </div>
+                                   <p style="color: var(--text-secondary);">
+                                        Implementação bem-sucedida de integrações entre ERP e plataformas externas,
+                                        otimizando fluxos de dados corporativos.
+                                   </p>
+                              </div>
+                         </div>
+                    </section>
+               </main>
+          </div>
+
+          <!-- Skills Detail Tab -->
+          <div id="skills-detail" class="tab-content">
+               <header class="header">
+                    <div class="header-content">
+                         <div>
+                              <h1 class="name">Competências Técnicas</h1>
+                              <p class="title">Stack tecnológico e níveis de proficiência</p>
+                         </div>
+                    </div>
+               </header>
+
+               <main class="main-content">
+                    <section class="section">
+                         <h2 class="section-title">
+                              <i class="fas fa-database"></i>
+                              Banco de Dados
+                         </h2>
+                         <div class="progress-section">
+                              <div class="progress-item">
+                                   <div class="progress-header">
+                                        <span class="progress-label">SQL Server / T-SQL</span>
+                                        <span class="progress-percentage">90%</span>
+                                   </div>
+                                   <div class="progress-bar">
+                                        <div class="progress-fill" style="--progress-width: 90%; --progress-index: 0"></div>
+                                   </div>
+                              </div>
+                              <div class="progress-item">
+                                   <div class="progress-header">
+                                        <span class="progress-label">Oracle PL/SQL</span>
+                                        <span class="progress-percentage">85%</span>
+                                   </div>
+                                   <div class="progress-bar">
+                                        <div class="progress-fill" style="--progress-width: 85%; --progress-index: 1"></div>
+                                   </div>
+                              </div>
+                              <div class="progress-item">
+                                   <div class="progress-header">
+                                        <span class="progress-label">Criação de Tabelas, Views, Procedures & Triggers</span>
+                                        <span class="progress-percentage">88%</span>
+                                   </div>
+                                   <div class="progress-bar">
+                                        <div class="progress-fill" style="--progress-width: 88%; --progress-index: 2"></div>
+                                   </div>
+                              </div>
+                         </div>
+                    </section>
+
+                    <section class="section">
+                         <h2 class="section-title">
+                              <i class="fas fa-code"></i>
+                              Desenvolvimento
+                         </h2>
+                         <div class="progress-section">
+                              <div class="progress-item">
+                                   <div class="progress-header">
+                                        <span class="progress-label">HTML 5 & CSS3</span>
+                                        <span class="progress-percentage">78%</span>
+                                   </div>
+                                   <div class="progress-bar">
+                                        <div class="progress-fill" style="--progress-width: 75%; --progress-index: 0"></div>
+                                   </div>
+                              </div>
+                              <div class="progress-item">
+                                   <div class="progress-header">
+                                        <span class="progress-label">JavaScript</span>
+                                        <span class="progress-percentage">70%</span>
+                                   </div>
+                                   <div class="progress-bar">
+                                        <div class="progress-fill" style="--progress-width: 70%; --progress-index: 1"></div>
+                                   </div>
+                              </div>
+                              <div class="progress-item">
+                                   <div class="progress-header">
+                                        <span class="progress-label">C# .NET</span>
+                                        <span class="progress-percentage">75%</span>
+                                   </div>
+                                   <div class="progress-bar">
+                                        <div class="progress-fill" style="--progress-width: 75%; --progress-index: 0"></div>
+                                   </div>
+                              </div>
+                              <div class="progress-item">
+                                   <div class="progress-header">
+                                        <span class="progress-label">REST APIs</span>
+                                        <span class="progress-percentage">80%</span>
+                                   </div>
+                                   <div class="progress-bar">
+                                        <div class="progress-fill" style="--progress-width: 80%; --progress-index: 2"></div>
+                                   </div>
+                              </div>
+                         </div>
+                    </section>
+
+                    <section class="section">
+                         <h2 class="section-title">
+                              <i class="fas fa-cogs"></i>
+                              Sistemas ERP & Ferramentas
+                         </h2>
+                         <div class="skills-container">
+                              <div class="skill-card" style="--card-index: 0">
+                                   <div class="skill-category-title">
+                                        <i class="fas fa-server"></i>
+                                        Sistemas ERP
+                                   </div>
+                                   <div class="skill-tags">
+                                        <span class="skill-tag">TOTVS RM</span>
+                                        <span class="skill-tag">ERP NBS</span>
+                                   </div>
+                              </div>
+
+                              <div class="skill-card" style="--card-index: 1">
+                                   <div class="skill-category-title">
+                                        <i class="fas fa-chart-bar"></i>
+                                        Business Intelligence
+                                   </div>
+                                   <div class="skill-tags">
+                                        <span class="skill-tag">Planilha Net</span>
+                                        <span class="skill-tag">Cubos OLAP</span>
+                                        <span class="skill-tag">RM Reports</span>
+                                        <span class="skill-tag">Excel</span>
+                                   </div>
+                              </div>
+
+                              <div class="skill-card" style="--card-index: 2">
+                                   <div class="skill-category-title">
+                                        <i class="fas fa-tools"></i>
+                                        Ferramentas
+                                   </div>
+                                   <div class="skill-tags">
+                                        <span class="skill-tag">Microsoft SQL Server</span>
+                                        <span class="skill-tag">Oracle SQL Developer</span>
+                                        <span class="skill-tag">SSMS</span>
+                                        <span class="skill-tag">Visual Studio Code</span>
+                                   </div>
+                              </div>
+                         </div>
+                    </section>
+               </main>
+          </div>
+
+          <!-- Cover Letter Tab -->
+          <div id="cover-letter" class="tab-content">
+               <header class="header">
+                    <div class="header-content">
+                         <div>
+                              <h1 class="name">Carta de Apresentação</h1>
+                              <p class="title">Por que sou o candidato ideal para sua empresa</p>
+                         </div>
+                    </div>
+               </header>
+
+              <main class="main-content">
+    <section class="section">
+         <div style="font-size: 16px; line-height: 1.8; color: var(--text-secondary);">
+              <p style="margin-bottom: 20px;">Prezados,</p>
+
+              <p style="margin-bottom: 18px;">
+                   Venho por meio desta demonstrar meu interesse na posição disponível e apresentar meu perfil profissional.
+              </p>
+
+              <p style="margin-bottom: 18px;">
+                   Tenho quatro anos de experiência em Tecnologia da Informação, com foco em suporte a sistemas ERP, 
+                   banco de dados e otimização de processos empresariais. Durante minha trajetória, atuei na análise e 
+                   suporte de sistemas, aprimorando a eficiência operacional e contribuindo diretamente para 
+                   melhoria da gestão empresarial.
+              </p>
+
+              <p style="margin-bottom: 18px;">
+                   Iniciei minha carreira como estagiário em suporte computacional, realizando atendimentos técnicos remotos. 
+                   Posteriormente, fui promovido para atuar no suporte ao ERP NBS, sistema voltado para a gestão de 
+                   concessionárias e autopeças, onde trabalhei with módulos contábeis, gestão de estoque e peças. Essa 
+                   experiência permitiu que eu aprofundasse meu conhecimento em banco de dados, utilizando Oracle PL/SQL 
+                   para suporte às operações e otimização de processos.
+              </p>
+
+              <p style="margin-bottom: 18px;">
+                   Em 2023, passei a atuar no ERP TOTVS RM, onde consolidei minhas habilidades na administração e suporte 
+                   de sistemas de gestão empresarial. Tenho experiência nos módulos Folha de Pagamento, Automação de Ponto, 
+                   Gestão de Pessoas e Segurança e Saúde Ocupacional, trabalhando na análise e melhoria contínua do sistema. 
+                   Além disso, desenvolvi relatórios gerenciais complexos, reduzindo o tempo de análise de dados, e implementei 
+                   integrações com sistemas de treinamento e segurança ocupacional, otimizando a gestão e compliance no setor de RH.
+              </p>
+
+              <p style="margin-bottom: 18px;">
+                   Minhas competências incluem análise, manutenção e monitoramento de dados no Microsoft SQL Server, 
+                   desenvolvimento de procedures, triggers e views, e a criação de layouts bancários personalizados em formato TXT 
+                   para integração com sistemas terceiros. Tenho experiência com ferramentas como Planilha Net, Cubos OLAP e RM Reports,
+                   garantindo extração e visualização eficiente de dados estratégicos.
+              </p>
+
+              <p style="margin-bottom: 18px;">
+                   Sou um profissional comprometido, analítico e sempre em busca de aprimoramento. Acredito que minha 
+                   experiência e capacidade de solucionar problemas podem agregar valor à sua equipe. Estou à disposição 
+                   para uma conversa e espero ter a oportunidade de contribuir com minha expertise.
+              </p>
+
+              <p style="margin-bottom: 40px;">
+                   Agradeço pela oportunidade e aguardo ansioso por um contato.<br><br>
+                   Atenciosamente,<br>
+                   <strong>Tiago Henrique Ferreira Dos Santos</strong>
+              </p>
+         </div>
+    </section>
+</main>
+          </div>
+     </div>
+
+     <script src="index.js"></script>
+</body>
+
+</html>
