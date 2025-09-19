@@ -228,50 +228,72 @@
           }
 
           function downloadPDF() {
-               try {
-                    // Tenta primeiro o arquivo na mesma pasta
-                    const link = document.createElement('a');
-                    
-                    // Se o PDF estiver na mesma pasta que o HTML
-                    link.href = '../Curriculo/CV_tiagosantosrm.pdf';
-                    
-                    // Se o PDF estiver uma pasta acima (descomente se necessário)
-                    // link.href = '../CV_tiagosantosrm.pdf';
-                    
-                    link.download = 'CV_TiagoSantos_2025.pdf';
-                    
-                    // Verifica se é possível fazer download
-                    fetch(link.href, { method: 'HEAD' })
-                         .then(response => {
-                              if (response.ok) {
-                                   // Arquivo encontrado, faz o download
-                                   document.body.appendChild(link);
-                                   link.click();
-                                   document.body.removeChild(link);
-                                   showDownloadNotification();
-                              } else {
-                                   throw new Error('Arquivo não encontrado');
-                              }
-                         })
-                         .catch(error => {
-                              // Se não encontrar, tenta abrir em nova aba
-                              console.log('Tentando método alternativo...');
-                              
-                              // Método alternativo: abrir em nova aba
-                              const win = window.open('CV_tiagosantosrm.pdf', '_blank');
-                              
-                              if (!win) {
-                                   // Se bloqueado pelo popup blocker
-                                   alert('Por favor, permita popups para baixar o PDF ou verifique se o arquivo CV_tiagosantosrm.pdf está na mesma pasta do index.html');
-                              } else {
-                                   showDownloadNotification();
-                              }
-                         });
-               } catch (e) {
-                    // Fallback final
-                    window.open('CV_tiagosantosrm.pdf', '_blank');
-               }
+          try {
+               // URL correta para download direto do Google Drive
+               const fileId = '1f1IxeUKYm-d0OEMRUhTgEMDXWJPnqYhG';
+               const downloadUrl = `https://drive.google.com/uc?export=download&id=${fileId}`;
+               
+               const link = document.createElement('a');
+               link.href = downloadUrl;
+               link.download = 'CV_tiagosantosrm.pdf'; // Nome do arquivo para salvar
+               
+               document.body.appendChild(link);
+               link.click();
+               document.body.removeChild(link);
+               
+               showDownloadNotification();
+          } catch (error) {
+               console.error('Erro no download:', error);
+               // Fallback: abrir em nova aba
+               window.open(`https://drive.google.com/file/d/1f1IxeUKYm-d0OEMRUhTgEMDXWJPnqYhG/view`, '_blank');
           }
+          }
+
+          // function downloadPDF() {
+          //      try {
+          //           // Tenta primeiro o arquivo na mesma pasta
+          //           const link = document.createElement('a');
+                    
+          //           // Se o PDF estiver na mesma pasta que o HTML
+          //           link.href = 'https://drive.google.com/file/d/1f1IxeUKYm-d0OEMRUhTgEMDXWJPnqYhG/view';
+                    
+          //           // Se o PDF estiver uma pasta acima (descomente se necessário)
+          //           // link.href = '../CV_tiagosantosrm.pdf';
+                    
+          //           link.download = 'https://drive.google.com/file/d/1f1IxeUKYm-d0OEMRUhTgEMDXWJPnqYhG/view';
+                    
+          //           // Verifica se é possível fazer download
+          //           fetch(link.href, { method: 'HEAD' })
+          //                .then(response => {
+          //                     if (response.ok) {
+          //                          // Arquivo encontrado, faz o download
+          //                          document.body.appendChild(link);
+          //                          link.click();
+          //                          document.body.removeChild(link);
+          //                          showDownloadNotification();
+          //                     } else {
+          //                          throw new Error('Arquivo não encontrado');
+          //                     }
+          //                })
+          //                .catch(error => {
+          //                     // Se não encontrar, tenta abrir em nova aba
+          //                     console.log('Tentando método alternativo...');
+                              
+          //                     // Método alternativo: abrir em nova aba
+          //                     const win = window.open('CV_tiagosantosrm.pdf', '_blank');
+                              
+          //                     if (!win) {
+          //                          // Se bloqueado pelo popup blocker
+          //                          alert('Por favor, permita popups para baixar o PDF ou verifique se o arquivo CV_tiagosantosrm.pdf está na mesma pasta do index.html');
+          //                     } else {
+          //                          showDownloadNotification();
+          //                     }
+          //                });
+          //      } catch (e) {
+          //           // Fallback final
+          //           window.open('CV_tiagosantosrm.pdf', '_blank');
+          //      }
+          // }
           
           function showDownloadNotification() {
                // Cria notificação de download
